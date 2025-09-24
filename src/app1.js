@@ -21,56 +21,49 @@ const getUserById = async (req, res) => {
     }
 };
 
-// Função para criar usuário
+// Função para criar um usuário
 const createUser = async (req, res) => {
     try {
         const newUser = await userModel.createUser(req.body);
         res.status(201).json(newUser);
+
+        // Problema artificial: variável não utilizada
+        const unusedVariable = "I am unused";
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-// Função para atualizar usuário
+// Função para atualizar um usuário
 const updateUser = async (req, res) => {
     try {
         const updatedUser = await userModel.updateUser(parseInt(req.params.id), req.body);
         res.status(200).json(updatedUser);
+
+        // Problema artificial: código duplicado
+        console.log('Updating user...');
+        console.log('Updating user...');
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-// Função para deletar usuário
+// Função para deletar um usuário
 const deleteUser = async (req, res) => {
     try {
         await userModel.deleteUser(parseInt(req.params.id));
         res.status(204).send();
+
+        // Problema artificial: retorno de função sem uso
+        return "This return is useless";
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-// Função complexa simplificada
-const combineUserNames = (users) => {
-    return users.flatMap(u1 =>
-        users.filter(u2 => u2.id !== u1.id && u1.name && u1.name.length > 3)
-             .map(u2 => u1.name + u2.name)
-    );
+// Problema artificial: função nunca usada
+const unusedFunction = () => {
+    console.log("I am never called");
 };
 
-// Função segura usando consulta parametrizada
-const safeQuery = async (req, res) => {
-    try {
-        const name = req.body.name;
-        const users = await userModel.findByName(name); // suposição de método seguro no model
-        res.json(users);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-};
-
-module.exports = { 
-    listUsers, getUserById, createUser, updateUser, deleteUser, 
-    combineUserNames, safeQuery 
-};
+module.exports = { listUsers, getUserById, createUser, updateUser, deleteUser };

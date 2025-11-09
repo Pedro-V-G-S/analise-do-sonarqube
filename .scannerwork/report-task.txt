@@ -1,6 +1,6 @@
 projectKey=crud-api-users-Pedro
 serverUrl=http://localhost:9000
-serverVersion=25.9.0.112764
+serverVersion=25.11.0.114957
 dashboardUrl=http://localhost:9000/dashboard?id=crud-api-users-Pedro
-ceTaskId=2e1f31ed-6617-4d47-9d90-982a9b179174
-ceTaskUrl=http://localhost:9000/api/ce/task?id=2e1f31ed-6617-4d47-9d90-982a9b179174
+ceTaskId=6ce72ef8-66b6-4a8d-8fcc-b805e494ee47
+ceTaskUrl=http://localhost:9000/api/ce/task?id=6ce72ef8-66b6-4a8d-8fcc-b805e494ee47
